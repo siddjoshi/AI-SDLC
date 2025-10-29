@@ -69,9 +69,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation Metrics
 - **Total Files**: 16 documentation files
-- **Total Content**: ~80KB of comprehensive documentation
-- **Templates**: 5 industry-standard templates
-- **Guides**: 4 detailed usage and best practice guides
+- **Total Content**: ~162KB of comprehensive documentation
+- **Templates**: 5 industry-standard templates (70KB)
+- **Guides**: 4 detailed usage and best practice guides (42.5KB)
+- **Root Documentation**: 7 core files (49.5KB)
 - **Coverage**: Complete SDLC documentation workflow from BRD to deployment
 
 ## [0.1.0] - Initial State
