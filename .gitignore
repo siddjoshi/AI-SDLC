@@ -1,0 +1,41 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Ignore editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+
+# Ignore build artifacts
+dist/
+build/
+*.o
+*.pyc
+__pycache__/
+
+# Ignore node modules (if any JS tools are used)
+node_modules/
+package-lock.json
+
+# Ignore Python virtual environments
+venv/
+env/
+.venv/
+
+# Keep the docs/diagrams directory but ignore temporary diagram files
+docs/**/*.tmp
+docs/**/*.backup
+
+# Keep templates directory clean
+templates/**/*.tmp
+templates/**/*.backup
