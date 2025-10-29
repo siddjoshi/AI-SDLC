@@ -2,9 +2,20 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 🚀 Quick Links
+
+- **[Quick Reference Guide](QUICK_REFERENCE.md)** - Get started in 5 minutes
+- **[Documentation Index](INDEX.md)** - Complete index of all files
+- **[Template Usage Guide](docs/TEMPLATE_USAGE_GUIDE.md)** - Detailed instructions
+- **[Best Practices](docs/BEST_PRACTICES.md)** - Documentation best practices
+- **[FAQ](docs/FAQ.md)** - Frequently asked questions
+- **[Contributing](CONTRIBUTING.md)** - How to contribute
+
 ## 📋 Overview
 
 AI-SDLC is a comprehensive framework and template collection designed to streamline the software development life cycle (SDLC) documentation process using AI assistance. This repository provides industry-standard templates for creating thorough, professional-grade project documentation that covers all phases of software development from business requirements to technical design.
+
+> **📑 Quick Navigation**: See [INDEX.md](INDEX.md) for a complete index of all documentation files organized by use case and role.
 
 ## 🎯 Purpose
 
