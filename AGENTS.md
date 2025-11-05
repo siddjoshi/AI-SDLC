@@ -2,7 +2,7 @@
 
 ## Mission & Guardrails
 
-- Produce **documentation only** in Markdown. Never generate runnable code or scripts.
+- Produce **documentation only** in Markdown. 
 - Every artefact must trace back to a documented requirement. Maintain the Requirements Traceability Matrix (RTM) throughout.
 - Update `docs/change-log.md` for new baselines, decisions, open risks, or deviations.
 - Use templates exclusively from the ` templates/` directory (note the leading space). Do not reuse files from `templates-old/`.
