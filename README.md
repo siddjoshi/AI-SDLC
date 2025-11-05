@@ -1,93 +1,134 @@
-# AI-SDLC
+# AI-SDLC Workspace
 
-# SDLC Artifacts – Phase-wise Catalogue
+The AI-SDLC repository hosts an enterprise-grade documentation system for managing the entire software development life cycle with the help of autonomous AI agents. Every phase from inception to operations is represented by:
 
-This document provides a **structured, phase-wise list of all key and optional artifacts** produced during the Software Development Life Cycle (SDLC). Each entry includes:
-- **Document Name**
-- **Description**
-- **Input Required**
-- **Depends On**
-- **Referenced By**
-- **Mandatory / Optional**
-- **Applicable Methodologies**
+- **Production-ready templates** stored under ` templates/`
+- **Persona-specific prompts** housed under `prompts/phase-xx-*`
+- **Governance guides** that enforce traceability, compliance, and review discipline
+
+Use this README as the north star for orchestrating artefact creation, review, and lifecycle management.
 
 ---
 
-## **Phase 1: Inception / Pre-Project**
+## Quick start for contributors
 
-| Phase      | Document Name       | Description                                      | Input Required                | Depends On | Referenced By                | Mandatory / Optional | Methodologies |
-|------------|---------------------|--------------------------------------------------|--------------------------------|------------|--------------------------------|------------------------|---------------|
-| Inception  | Business Case       | Justifies project, ROI, risks, benefits         | Opportunity / Idea            | None       | Project Charter, Roadmap      | **✅ Mandatory**      | All           |
-| Inception  | Vision & Goals      | Defines product vision and success metrics      | Business Case                 | Business Case | PRD, Roadmap                  | **✅ Mandatory**      | All           |
-| Inception  | Stakeholder Register| Identifies key stakeholders and roles           | Vision & Goals                | Vision & Goals | RACI, Comms Plan              | **✅ Mandatory**      | All           |
-| Inception  | Project Charter     | Authorises project, scope, budget               | Business Case, Stakeholder Register | Business Case | Delivery Plan, RAID Log       | **✅ Mandatory**      | Waterfall, Hybrid |
-| Inception  | RACI Matrix         | Roles and responsibilities                      | Stakeholder Register          | Stakeholder Register | Change Control, Governance    | *⚪ Optional*         | All           |
-| Inception  | Communication Plan  | Defines communication cadence and channels      | Stakeholder Register          | Stakeholder Register | Governance, Release Comms     | *⚪ Optional*         | All           |
+1. **Read `AGENTS.md`** to internalise operating rules before engaging in any phase.
+2. **Review existing artefacts** in `docs/`, `backlog/`, and `tests/` to avoid duplication and understand context.
+3. **Launch prompts phase by phase** (see table below) and allow agents to clone the corresponding templates into the correct location.
+4. **Update `docs/change-log.md`** whenever a baseline, decision, or dependency shifts.
+5. **Keep the Requirements Traceability Matrix (`docs/requirements/RTM.md`) current**. It is the single source of truth linking requirements to design, build, test, and operational evidence.
+6. **Confirm approvals** using the tables embedded in each template before marking a deliverable complete.
 
 ---
 
-## **Phase 2: Requirements**
+## Repository map
 
-| Phase        | Document Name                | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|--------------|-----------------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Requirements | [BRD (Business Req Doc)](BRD.md)needs and KPIs               | Vision & Goals, Stakeholder Register | Vision & Goals    | SRS, HLD                          | *⚪ Optional*         | Waterfall, Hybrid |
-| Requirements | PRD (Product Req Doc)       | Defines product features and acceptance criteria| Vision & Goals, Discovery Data | Vision & Goals    | Backlog, HLD, Test Strategy       | **✅ Mandatory**      | Agile, Hybrid |
-| Requirements | SRS.md     | Functional & non-functional requirements        | BRD/PRD, Elicitation Outputs    | BRD/PRD          | HLD, LLD, RTM, Test Design        | **✅ Mandatory**      | All           |
-| Requirements | NFR Spec                    | Quality attributes (performance, security)      | Vision & Goals, PRD/SRS         | PRD/SRS          | HLD, Test Strategy, SLOs          | **✅ Mandatory**      | All           |
-| Requirements | RTM.md   | Maps requirements to design & tests             | SRS/User Stories                | SRS              | Test Evidence, Release Readiness  | **✅ Mandatory**      | All           |
-| Requirements | User Stories & Acceptance Criteria | Agile slice of requirements                   | PRD                              | PRD              | Sprint Backlog, Test Cases         | **✅ Mandatory (Agile)** | Agile         |
-
----
-
-## **Phase 3: Design**
-
-| Phase   | Document Name         | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|---------|-----------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Design  | Architecture Overview | High-level principles and constraints           | SRS, NFR Spec                   | SRS, NFRs        | HLD, ADRs                          | **✅ Mandatory**      | All           |
-| Design  | ADR (Decision Record) | Logs architecture decisions and rationale        | Architecture Overview            | Architecture Overview | HLD, LLD, Ops SOPs                | **✅ Mandatory**      | All           |
-| Design  | [HLD (High-Level Design)](HLD.md)| System decomposition, interfaces, deployment    | SRS, NFRs, ADRs                 | SRS, ADRs        | LLD, API Spec, Threat Model        | **✅ Mandatory**      | All          el Design)| Detailed component-level design                 | HLD                              | HLD              | Code, Unit Tests                   | **✅ Mandatory (Waterfall)** | Waterfall, Hybrid |
-| Design  | API Spec / ICD        | Interface contracts                             | HLD                              | HLD              | Dev, Contract Tests                | **✅ Mandatory**      | All           |
-| Design  | Threat Model          | Identifies threats and mitigations             | Security Requirements, HLD       | Security Reqs, HLD| Security Tests, Controls           | **✅ Mandatory**      | All           |
+| Path | Purpose |
+|------|---------|
+| ` templates/` | Canonical templates referenced by all prompts (note the leading space in the directory name). |
+| `prompts/` | AI prompts organised by SDLC phase and persona (`phase-01-inception` … `phase-07-operations`). |
+| `docs/` | Generated artefacts per phase (requirements, design, testing, release, operations). |
+| `backlog/` | Epics, features, stories, tasks, and improvement items created from Phase 2 onwards. |
+| `tests/` | Functional, automation, performance, and security test suites defined in Phase 5. |
+| `AGENTS.md` | Mandatory operating handbook for all AI agents working in this workspace. |
 
 ---
 
-## **Phase 4: Development**
+## SDLC automation workflow
 
-| Phase       | Document Name           | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|-------------|-------------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Development | Coding Standards        | Language/framework conventions                  | LLD/Stories                     | LLD              | Code Reviews, CI Gates            | **✅ Mandatory**      | All           |
-| Development | CI/CD Pipeline Spec     | Build, test, deploy automation                 | Branching Strategy              | Config Mgmt Plan | Release Plan, Deployment Plan      | **✅ Mandatory**      | DevOps        |
-| Development | SBOM                    | Software Bill of Materials                     | Pipeline                        | Pipeline          | Security Reviews, Audits           | **✅ Mandatory**      | DevOps        |
-| Development | Unit Test Specs         | Module-level verification                      | LLD/Stories                     | LLD              | Test Summary, RTM                  | **✅ Mandatory**      | All           |
+| Phase | Primary Personas & Prompt Folder | Key Deliverables (target paths) | Must Exist Before |
+|-------|----------------------------------|----------------------------------|-------------------|
+| 1. Inception | `prompts/phase-01-inception/` | `docs/inception/business-case.md`, `docs/inception/vision-and-goals.md`, stakeholder register, RACI, communication plan, `docs/change-log.md` | Opportunity / idea intake |
+| 2. Requirements | `prompts/phase-02-requirements/` | `docs/requirements/BRD.md`, `docs/requirements/PRD.md`, `docs/requirements/SRS.md`, `docs/requirements/NFR.md`, `docs/requirements/RTM.md`, backlog hierarchy (`backlog/`) | Phase 1 artefacts approved |
+| 3. Design | `prompts/phase-03-design/` | `docs/design/HLD.md`, `docs/design/LLD/<component>.md`, `docs/design/threat-model.md`, `docs/design/api-specs/`, `docs/design/data-architecture.md` | Requirements baseline and RTM |
+| 4. Development Enablement | `prompts/phase-04-development/` | `docs/development/coding-standards.md`, iteration plan, CI/CD spec, environment matrix, SBOM strategy, task readiness log | HLD, backlog, and security design |
+| 5. Testing & QA | `prompts/phase-05-testing/` | `docs/testing/TestPlan.md`, detailed test suites under `tests/`, `docs/testing/test-data-strategy.md` | Design and development readiness |
+| 6. Release & Deployment | `prompts/phase-06-release/` | `docs/release/deployment-runbook.md`, `docs/release/go-no-go-checklist.md`, `docs/release/RollbackPlan.md`, `docs/release/ReleaseNotes.md`, support readiness checklist | Test evidence and approvals |
+| 7. Operations & Improvement | `prompts/phase-07-operations/` | `docs/operations/incident-response.md`, `docs/operations/observability-status.md`, `docs/operations/rca-template.md`, `docs/operations/retrospective-agenda.md`, improvement backlog updates | Release artefacts and telemetry hooks |
 
----
-
-## **Phase 5: Testing**
-
-| Phase    | Document Name       | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|----------|---------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Testing  | TestPlan.md       | Levels, coverage, automation policy             | SRS, NFR Spec                   | SRS, NFRs        | Test Plan, Test Suites             | **✅ Mandatory**      | All           |
-| Testing  | [Test Plan](TestPlan.md)           | Scope, environment, entry/exit criteria         | Test Strategy                    | Test Strategy    | Execution Reports, Go/No-Go        | **✅ Mandatory**      | All           |
-UAT Plan & Sign-off | Business validation and approval                | BRD/PRD, Test Plan               | BRD/PRD          | Go/No-Go, Release                  | **✅ Mandatory**      | All           |
-| Testing  | Defect Log          | Tracks defects and triage                       | Test Execution                   | Test Execution   | RCA/Postmortem                     | **✅ Mandatory**      | All           |
+> **Parallelisation:** Prompts marked as parallel in their instructions may run concurrently, but the RTM and change log must be updated before closing any deliverable.
 
 ---
 
-## **Phase 6: Deployment & Release**
+## User input readiness guide
 
-| Phase      | Document Name       | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|------------|---------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Release    | Deployment Runbook  | Step-by-step deployment instructions            | CI/CD Pipeline, HLD             | CI/CD, HLD       | OAT, Ops SOPs                      | **✅ Mandatory**      | DevOps        |
-| Release    | Rollback Plan       | Verified rollback paths                         | Deployment Plan                  | Deployment Plan   | Incident Response                   | **✅ Mandatory**      | All           |
-| Release    | Release Notes       | Changes, known issues, rollback hints          | Test Summary                     | Test Summary      | CAB/Comms, Ops                      | **✅ Mandatory**      | All           |
+Agents can only automate downstream documentation if the right context is supplied up front. Aim to provide the full intake bundle below before starting Phase 1; the remaining touchpoints capture the few moments where manual confirmation is still required.
+
+### Intake bundle to provide before Phase 1 kicks off
+
+- **Business context:** Opportunity statement, success metrics/KPIs, desired business outcomes, and any hard deadlines.
+- **Stakeholder universe:** Names, roles, decision authority, contact cadence, escalation path, and availability for reviews.
+- **Scope framework:** In-scope vs. out-of-scope capabilities, core user journeys, assumptions, dependencies, and known constraints (budget, geography, licensing, vendor lock-ins).
+- **Compliance posture:** Regulatory regimes (e.g., GDPR, PCI, HIPAA), privacy classifications, audit obligations, and security posture requirements.
+- **Current-state landscape:** Existing systems, integrations, data sources, interface contracts, and technology guardrails set by enterprise architecture.
+- **User and market insights:** Personas, usage scenarios, competitive research, market differentiation goals, accessibility expectations.
+- **Delivery policies:** Funding model, release cadence targets, change-approval process, service-level objectives (SLOs), availability, performance, and accessibility thresholds.
+- **Operational readiness inputs:** Support model expectations, monitoring/observability tool stack, incident escalation policies, and disaster-recovery mandates.
+- **Access logistics:** Points of contact for environments, credential provisioning workflows, and location of authoritative reference material (wikis, RFCs, vendor docs).
+
+Providing this package upfront allows agents across every phase to execute without pausing for clarifications.
+
+### Phase-specific touchpoints where manual input is still required
+
+| Phase | Why agents still need you | Manual input required | Ideal timing |
+|-------|---------------------------|-----------------------|--------------|
+| 1. Inception | Resolve open questions that arise while drafting the business case and governance artefacts. | Clarify ambiguous objectives, confirm stakeholder commitments, approve initial change-log entries. | During initial prompt run; respond within 1 business day. |
+| 2. Requirements | Validate prioritisation and legal/compliance interpretations that cannot be inferred from intake data. | Approve story prioritisation, confirm acceptance criteria sign-off, supply data classification matrices, endorse RTM numbering scheme. | Immediately after BRD/PRD drafts are produced. |
+| 3. Design | Align technical decisions with enterprise standards and integration owners. | Confirm approved tech stack, supply vetted reference architectures, share integration credentials/protocol specs that cannot reside in source control, provide security review outcomes. | Before HLD sign-off and prior to creating LLD/API specs. |
+| 4. Development Enablement | Unlock delivery tooling and secrets the agents cannot provision autonomously. | Provide repository or package registry access, CI/CD runner credentials, environment provisioning approvals, third-party license confirmations. | As soon as Phase 4 prompts begin so iteration planning can proceed. |
+| 5. Testing & QA | Authorise regulated data usage and finalise go/no-go criteria for quality gates. | Approve use of production-like datasets or synthetic data plans, confirm required compliance evidence, designate test environments and SLAs for defect turnaround. | Prior to freezing the master Test Plan and test data strategy. |
+| 6. Release & Deployment | Interface with organisational change management and operations leads. | Provide CAB approvals, lock production release windows, nominate on-call responders, supply rollback validation proof from dry runs. | At least one release cycle ahead of deployment to avoid schedule slips. |
+| 7. Operations & Improvement | Feed real-world telemetry and business outcomes back into the automation loop. | Share live SLI/SLO dashboards, incident postmortems, customer satisfaction metrics, and prioritised improvement backlog entries. | On a recurring cadence post-release (e.g., monthly or per incident). |
+
+Outside these checkpoints, the agents operate autonomously using the supplied templates, prompts, and governance artefacts. Update the intake bundle whenever business priorities shift so downstream phases remain in sync.
 
 ---
 
-## **Phase 7: Maintenance & Operations**
+## Template inventory
 
-| Phase       | Document Name       | Description                                      | Input Required                  | Depends On       | Referenced By                     | Mandatory / Optional | Methodologies |
-|-------------|---------------------|--------------------------------------------------|---------------------------------|-------------------|-----------------------------------|------------------------|---------------|
-| Operations  | Incident RCA        | Root cause analysis and corrective actions      | Incident Record, Telemetry       | Incident Record   | Problem Management, Backlog        | **✅ Mandatory**      | DevOps, ITIL  |
-| Operations  | Retrospective Report| Process improvement actions                     | Release or Sprint                | Release/Sprint    | Ways-of-working updates             | **✅ Mandatory**      | Agile, DevOps |
+| Template (under ` templates/`) | Primary Deliverable | Prompt Phase |
+|--------------------------------|---------------------|--------------|
+| `BRD.md` | `docs/requirements/BRD.md` | Phase 2.1 – Product Manager |
+| `PRD.md` | `docs/requirements/PRD.md` | Phase 2.1 – Product Manager |
+| `SRS.md` | `docs/requirements/SRS.md` | Phase 2.2 – Systems Analyst |
+| `NFR.md` | `docs/requirements/NFR.md` | Phase 2.3 – Product Operations |
+| `RTM.md` | `docs/requirements/RTM.md` | Phase 2.2 – Systems Analyst |
+| `EPIC.md`, `Feature.md`, `Story.md`, `Task.md` | Backlog artefacts (`backlog/`) | Phase 2.3 – Product Operations |
+| `HLD.md` | `docs/design/HLD.md` | Phase 3.1 – Solution Architect |
+| `LLD.md` | `docs/design/LLD/<component>.md` | Phase 3.1 – Solution Architect |
+| `TestPlan.md` | `docs/testing/TestPlan.md` | Phase 5.1 – QA/Test Lead |
+| `ReleaseNotes.md` | `docs/release/ReleaseNotes.md` | Phase 6.2 – Change Manager |
+| `RollbackPlan.md` | `docs/release/RollbackPlan.md` | Phase 6.2 – Change Manager |
+
+All prompts assume these templates remain unchanged. Update templates thoughtfully and note changes in the change log to keep downstream automation consistent.
 
 ---
+
+## Governance & quality guardrails
+
+- **Traceability first:** Every requirement, design component, test case, and operational control must link back to RTM identifiers.
+- **Change management:** Maintain `docs/change-log.md` for approvals, baselines, open questions, and risk decisions across phases.
+- **Approvals & versioning:** Use the tables embedded in each template to capture reviewer sign-off and document version history.
+- **Compliance alignment:** Ensure security, privacy, accessibility, and regulatory constraints are satisfied in BRD, NFR, design, and release artefacts.
+- **Documentation consistency:** Keep terminology, IDs, and references uniform. If a concept changes, cascade updates through dependent artefacts.
+
+---
+
+## Contribution checklist
+
+Before concluding any task:
+
+- [ ] All referenced templates were cloned from ` templates/` and populated without placeholders.
+- [ ] RTM entries and the change log reflect new or modified work.
+- [ ] Stakeholder approvals or follow-up actions are recorded with owners and due dates.
+- [ ] Parallel teams (architecture, engineering, QA, release, operations) have been notified of dependencies or impacts.
+
+---
+
+## Additional resources
+
+- **Operating handbook:** `AGENTS.md`
+- **Prompt catalogue:** `prompts/SDLC_AI_Agent_Prompts.md`
+- **Historical templates:** `templates-old/` (for reference only; do not reuse without review).
+
+Use these resources together to deliver audit-ready SDLC documentation with predictable quality and full lifecycle traceability.
