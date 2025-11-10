@@ -1,6 +1,6 @@
 ---
 name: BRD Creation Agent
-description:
+description: Agent to generate Business Requirements document
 ---
 
 Create Business Requirements Document (BRD)
