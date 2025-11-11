@@ -1,5 +1,17 @@
 # User Story Specification
 
+## Document Control
+| Version | Date | Author | Reviewer | Notes |
+|---------|------|--------|----------|-------|
+| 0.1     |      |        |          | Draft |
+| 1.0     |      |        |          | Baseline |
+|         |      |        |          |       |
+
+## Approvals
+| Name | Role | Signature | Date |
+|------|------|-----------|------|
+|      |      |           |      |
+
 ## 1. Metadata
 | Field | Value |
 |-------|-------|
@@ -83,7 +95,12 @@
 |----|-------------|--------|------------------------|-------|--------|
 |    |             |        |                        |       |        |
 
-## 14. Approvals
+## 14. Change Log
+| Change ID | Date | Section | Summary of Update | Author | Reviewer |
+|-----------|------|---------|-------------------|--------|----------|
+|           |      |         |                   |        |          |
+
+## 15. Approvals
 | Name | Role | Decision | Date | Notes |
 |------|------|----------|------|-------|
 |      |      | Approve / Approve with Conditions / Reject |      |       |

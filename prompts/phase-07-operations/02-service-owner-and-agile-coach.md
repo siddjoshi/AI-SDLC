@@ -1,46 +1,44 @@
 # Phase 7.2 – Service Owner & Agile Coach Prompt (RCA & Continuous Improvement)
 
-## Context
-- **Prerequisites:** Release completed or in production readiness review; incident response and observability documents prepared (Phase 7.1); change log updated; RTM reflects operational evidence; stakeholder feedback available.
-- **Reference Artefacts:** `docs/operations/incident-response.md`, `docs/operations/observability-status.md`, `docs/release/deployment-runbook.md`, `docs/release/RollbackPlan.md`, `docs/release/ReleaseNotes.md`, `docs/testing/TestPlan.md`, `docs/requirements/RTM.md`, backlog artefacts, risk register, communication plan.
-- **Downstream Dependencies:** Future delivery cycles, backlog refinement, governance reporting.
+## Role Mission
+Capture post-release learnings, prepare RCA and retrospective structures, and channel improvements into the backlog for future iterations.
 
-## Objective
-Capture learnings via RCA templates, plan retrospectives, and channel improvements into the delivery backlog for continuous optimisation.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Operational artefacts | `docs/operations/incident-response.md`, `docs/operations/observability-status.md` | Gather incident handling guidance, telemetry gaps, operational insights. |
+| Release artefacts | `docs/release/deployment-runbook.md`, `docs/release/RollbackPlan.md`, `docs/release/ReleaseNotes.md`, `docs/release/support-readiness-checklist.md` | Understand release outcomes, known issues, support posture. |
+| Testing & requirements | `docs/testing/TestPlan.md`, `docs/requirements/RTM.md`, backlog directories | Align improvements with requirements, traceability, backlog items. |
+| Governance | `docs/inception/communication-plan.md`, `docs/change-log.md`, stakeholder feedback | Determine audiences, reporting cadence, outstanding risks. |
 
-## Step-by-Step Instructions
-1. **Evidence Review**
-   - Assess release outcomes, incident reports, telemetry status, stakeholder feedback, and defect trends.
-   - Identify notable successes, issues, and improvement opportunities.
-2. **RCA Template Preparation**
-   - Create `docs/operations/rca-template.md` with structure for incident summary, timeline, contributing factors, corrective/preventive actions, verification, and lessons learned.
-   - Pre-populate with examples or placeholders derived from current release context.
-3. **Retrospective Planning**
-   - Draft `docs/operations/retrospective-agenda.md` outlining goals, attendees, data points (KPIs, defects, velocity), facilitation plan, and action item tracking approach.
-   - Incorporate cross-functional perspectives (Product, Engineering, QA, DevOps, Support).
-4. **Improvement Backlog & Traceability**
-   - Log improvement actions into backlog artefacts (new epics/features/stories/tasks) or dedicated `backlog/improvements/` directory.
-   - Update RTM with continuous improvement items where they impact requirements or NFRs.
-5. **Governance & Reporting**
-   - Summarise key insights and planned actions in change log.
-   - Prepare executive-ready summary or dashboard as needed for programme governance.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| RCA Template | `docs/operations/rca-template.md` | Markdown | Provide structured sections for incidents, contributing factors, corrective actions, verification. |
+| Retrospective Agenda | `docs/operations/retrospective-agenda.md` | Markdown | Outline goals, attendees, data inputs, facilitation plan, action tracking. |
+| Improvement Backlog Items | `backlog/improvements/` or relevant directories | Markdown | Document improvements with traceability to metrics/issues. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Reference improvements impacting requirements/NFRs and planned validation. |
+| Change Log Update | `docs/change-log.md` | Markdown | Summarise lessons learned, actions, owners, due dates. |
 
-## Deliverables
-- `docs/operations/rca-template.md`
-- `docs/operations/retrospective-agenda.md`
-- Improvement backlog entries (e.g., `backlog/improvements/`)
-- Updated `docs/requirements/RTM.md`
-- Change log updates summarising learnings and actions
+## Procedure
+1. **Evidence Review** – Analyse release outcomes, incident reports, telemetry status, stakeholder feedback, defect trends to identify successes, issues, improvement opportunities.
+2. **Prepare RCA Template** – Create `docs/operations/rca-template.md`; include sections for summary, timeline, detection, contributing factors, corrective/preventive actions, verification, lessons learned, follow-up tracking.
+3. **Plan Retrospective** – Draft `docs/operations/retrospective-agenda.md`; set objectives, attendees across functions, data inputs (KPIs, velocity, defects, incident metrics), facilitation steps, action item logging approach.
+4. **Log Improvement Backlog Items** – Create or update entries under `backlog/improvements/` (or existing backlog directories) using appropriate templates; link to RTM IDs, incidents, metrics, owners, expected benefits.
+5. **Update RTM** – Reflect continuous improvement items affecting requirements/NFRs; mark planned validation or future releases.
+6. **Change Log & Communication** – Record lessons learned, planned actions, responsible owners, and due dates in change log; align with communication plan for stakeholder updates.
+7. **Versioning & Approvals** – Populate document control, change log, approvals within new artefacts; secure sign-off as required by governance.
 
-## Traceability & Handover Requirements
-- Ensure improvement actions link back to metrics or issues identified during release/operations.
-- Share outputs with Product Manager and Engineering Lead for incorporation into future cycles.
-- Provide visibility to stakeholders via communication plan channels.
+## Traceability & Governance
+- Link improvement actions to metrics, incidents, or requirements recorded in RTM and backlog.
+- Provide transparency to stakeholders via communication plan channels.
+- Ensure lessons learned feed into next inception/requirements cycles.
 
-## Completion Criteria
-- RCA template and retrospective agenda ready for execution; improvement actions captured with owners and due dates.
-- RTM and change log reflect continuous improvement traceability.
-- Stakeholders acknowledged receipt of lessons learned and action plan.
+## Completion Checklist
+- [ ] RCA template and retrospective agenda prepared with no placeholders.
+- [ ] Improvement backlog entries created with traceability and owners.
+- [ ] RTM updated to reflect continuous improvement items; change log summarises actions.
+- [ ] Stakeholders acknowledged receipt of lessons learned and action plan.
 
 ## Parallelisation Notes
-- Subsequent inception/requirements phases can leverage retrospective outputs; maintain repository artefacts to ensure continuous improvement feedback loop remains auditable.
+Subsequent inception/requirements phases should incorporate outputs; maintain artefacts for audit and future planning.

@@ -1,5 +1,17 @@
 # Task Execution Template
 
+## Document Control
+| Version | Date | Author | Reviewer | Notes |
+|---------|------|--------|----------|-------|
+| 0.1     |      |        |          | Draft |
+| 1.0     |      |        |          | Baseline |
+|         |      |        |          |       |
+
+## Approvals
+| Name | Role | Signature | Date |
+|------|------|-----------|------|
+|      |      |           |      |
+
 ## 1. Metadata
 | Field | Value |
 |-------|-------|
@@ -57,12 +69,17 @@
 |----|-------------|--------|-------------------------|-------|--------|
 |    |             |        |                         |       |        |
 
-## 10. Approvals & Handover
+## 10. Change Log
+| Change ID | Date | Section | Summary of Update | Author | Reviewer |
+|-----------|------|---------|-------------------|--------|----------|
+|           |      |         |                   |        |          |
+
+## 11. Approvals & Handover
 | Reviewer | Role | Outcome | Date | Notes |
 |----------|------|---------|------|-------|
 |          |      | Approve / Changes Required |      |       |
 
-## 11. Traceability
+## 12. Traceability
 - **Linked Commits / Branches:** _Repository paths, commit IDs, PR numbers._
 - **Related Tickets / Defects:** _Jira, Azure Boards, GitHub Issues identifiers._
 - **Test Evidence:** _Screenshots, logs, test reports, CI pipeline runs._

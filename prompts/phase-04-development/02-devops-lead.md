@@ -1,47 +1,43 @@
 # Phase 4.2 – DevOps Lead Prompt (CI/CD Architecture & SBOM Strategy)
 
-## Context
-- **Prerequisites:** Coding standards and iteration plan drafted (Phase 4.1); HLD/LLD, threat model, API specs, data design available; RTM updated; change log current.
-- **Reference Artefacts:** `docs/development/coding-standards.md`, `docs/development/iteration-plan.md`, `docs/design/HLD.md`, `docs/design/threat-model.md`, `docs/design/api-specs/`, `docs/design/data-architecture.md`, `docs/requirements/NFR.md`, `docs/requirements/RTM.md`.
-- **Downstream Dependencies:** QA/Test (Phase 5), Release (Phase 6), Operations (Phase 7).
+## Role Mission
+Design the continuous delivery pipeline, environment strategy, and SBOM governance to meet quality, compliance, and operational expectations.
 
-## Objective
-Define the continuous delivery pipeline, environment strategy, and SBOM governance to satisfy quality, compliance, and operational requirements.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Engineering artefacts | `docs/development/coding-standards.md`, `docs/development/iteration-plan.md`, `docs/development/readiness-checklist.md` | Align pipeline policies with engineering standards and schedule. |
+| Design & Requirements | `docs/design/HLD.md`, `docs/design/threat-model.md`, `docs/design/api-specs/`, `docs/design/data-architecture.md`, `docs/requirements/NFR.md`, `docs/requirements/RTM.md` | Derive quality gates, security controls, environment needs. |
+| Governance | `docs/inception/raci-matrix.md`, `docs/change-log.md` | Confirm approvals, audits, outstanding risks. |
 
-## Step-by-Step Instructions
-1. **Pipeline Requirements Gathering**
-   - Extract quality gates, security controls, and compliance obligations from NFR catalogue, threat model, and coding standards.
-   - Validate required environments and deployment topology from HLD/LLD.
-2. **Author CI/CD Specification**
-   - Create `docs/development/cicd-spec.md` outlining pipeline stages, tooling, workflow triggers, branch policies, automated test stages, promotion criteria, approvals, and monitoring hooks.
-   - Incorporate observability and rollback hooks required by Release and Operations teams.
-3. **Define Environment & Infrastructure Matrix**
-   - Document environment purpose, configuration, access controls, data management, and dependencies in `docs/development/environment-matrix.md`.
-   - Align with iteration plan scheduling.
-4. **SBOM & Supply Chain Security**
-   - Specify SBOM generation, storage, validation, and compliance reporting. Include third-party dependency scanning, licence checks, and attestation steps.
-   - Capture requirements in `docs/development/sbom-strategy.md` and reference within CI/CD spec.
-5. **Traceability & Collaboration**
-   - Update RTM with CI/CD stage references addressing requirements/NFRs.
-   - Coordinate with QA to integrate test suites and with Release Manager on deployment readiness evidence.
-   - Log decisions, risks, and blockers in change log.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| CI/CD Specification | `docs/development/cicd-spec.md` | Markdown | Detail stages, tooling, triggers, quality gates, promotion criteria, monitoring hooks. |
+| Environment Matrix | `docs/development/environment-matrix.md` | Markdown | Document environment purposes, configuration, access controls, data handling. |
+| SBOM Strategy | `docs/development/sbom-strategy.md` | Markdown | Outline SBOM generation, validation, storage, reporting, compliance cadence. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Map requirements/NFRs to pipeline stages, evidence, tooling. |
+| Change Log Update | `docs/change-log.md` | Markdown | Record pipeline decisions, dependencies, risks, mitigation actions. |
 
-## Deliverables
-- `docs/development/cicd-spec.md`
-- `docs/development/environment-matrix.md`
-- `docs/development/sbom-strategy.md`
-- Updated `docs/requirements/RTM.md`
-- Change log entries capturing pipeline decisions and dependencies
+## Procedure
+1. **Gather Pipeline Requirements** – Extract quality gates, security controls, compliance obligations from NFR catalogue, threat model, coding standards, design artefacts.
+2. **Author CI/CD Specification** – Create `docs/development/cicd-spec.md`; describe pipeline stages, branch policies, build/test tooling, static analysis, security/privacy scans, performance testing, promotion criteria, approvals, monitoring/logging integration, rollback automation, evidence capture.
+3. **Define Environment Matrix** – Document each environment in `docs/development/environment-matrix.md`; include purpose, topology, configuration, access, data management, refresh cadence, observability, compliance guardrails.
+4. **Establish SBOM Strategy** – Draft `docs/development/sbom-strategy.md`; specify tooling, trigger points, artefact storage, integrity verification, licence compliance, attestation workflow, integration with CI/CD.
+5. **Traceability & RTM** – Update RTM with pipeline stages and artefacts covering specific requirements/NFRs, linking to backlog tasks and test plan expectations.
+6. **Collaboration & Alignment** – Coordinate with QA for test integration, Release Manager for deployment evidence, Operations for monitoring and incident hooks; record actions and owners.
+7. **Change Log & Approvals** – Update change log with decisions, risks, dependencies; populate document control and approval tables for each deliverable.
 
-## Traceability & Handover Requirements
-- Link pipeline stages to requirements and NFRs in RTM.
-- Provide QA with test integration points and data needs; inform Release/Operations of deployment evidence generated by pipeline.
-- Highlight tooling or infrastructure requests to engineering leadership.
+## Traceability & Governance
+- Ensure pipeline stages reference requirement IDs, NFRs, and associated evidence in RTM.
+- Capture compliance reporting obligations and audit artefact retention.
+- Highlight infrastructure/tooling requests and risks for stakeholder review.
 
-## Completion Criteria
-- CI/CD spec approved with clear roles, quality gates, and automation coverage.
-- Environment matrix and SBOM strategy documented with no placeholders; responsibilities assigned.
-- RTM updated, risks logged, and stakeholders briefed on next steps.
+## Completion Checklist
+- [ ] CI/CD spec, environment matrix, and SBOM strategy completed with no placeholders.
+- [ ] RTM updated with pipeline coverage and evidence references.
+- [ ] Change log reflects decisions, risks, dependencies, owners.
+- [ ] Approvals and document control sections updated for each artefact.
 
 ## Parallelisation Notes
-- Engineering Team Readiness (Phase 4.3) can proceed concurrently, referencing pipeline readiness; QA planning (Phase 5) can begin once CI/CD stages are defined.
+Engineering Team readiness (Phase 4.3) proceeds concurrently; QA planning (Phase 5.1) can begin once CI/CD stages are defined.

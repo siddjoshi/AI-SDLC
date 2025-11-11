@@ -1,6 +1,18 @@
 # Epic Blueprint: <Epic Name or Theme>
 
-## 1. Metadata & Control
+## Document Control
+| Version | Date | Author | Reviewer | Notes |
+|---------|------|--------|----------|-------|
+| 0.1     |      |        |          | Draft |
+| 1.0     |      |        |          | Baseline |
+|         |      |        |          |       |
+
+## Approvals
+| Name | Role | Signature | Date |
+|------|------|-----------|------|
+|      |      |           |      |
+
+## 1. Metadata
 | Field | Value |
 |-------|-------|
 | Epic ID | EP-<NNNN> |
@@ -102,12 +114,17 @@
 ## 14. Open Questions & Follow-Ups
 - _List clarification topics, outstanding decisions, or dependencies awaiting confirmation._
 
-## 15. Approval & Sign-off
+## 15. Change Log
+| Change ID | Date | Section | Summary of Update | Author | Reviewer |
+|-----------|------|---------|-------------------|--------|----------|
+|           |      |         |                   |        |          |
+
+## 16. Approval & Sign-off
 | Name | Role | Decision (Approve / Approve with Conditions / Reject) | Date | Notes |
 |------|------|------------------------------------------------------|------|-------|
 |      |      |                                                      |      |       |
 
-## 16. Validation Checklist
+## 17. Validation Checklist
 - [ ] Executive summary, value hypothesis, and strategic alignment are documented.
 - [ ] Scope, assumptions, constraints, and dependencies have owners and timelines.
 - [ ] Traceability to BRD / PRD / SRS / NFR and RTM entries is captured and current.

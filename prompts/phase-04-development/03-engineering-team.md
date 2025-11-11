@@ -1,44 +1,43 @@
 # Phase 4.3 – Engineering Team Prompt (Task Readiness & Execution Prep)
 
-## Context
-- **Prerequisites:** Coding standards, iteration plan, CI/CD spec, environment matrix, and backlog artefacts published; RTM current; change log updated with delivery notes.
-- **Reference Artefacts:** `docs/development/coding-standards.md`, `docs/development/iteration-plan.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, `docs/development/sbom-strategy.md`, backlog tasks, `docs/requirements/RTM.md`, `docs/design/LLD/`.
-- **Downstream Dependencies:** QA/Test (Phase 5), Release (Phase 6) for readiness evidence.
+## Role Mission
+Validate that each development task is fully ready for execution, address gaps, and confirm forward traceability before implementation begins.
 
-## Objective
-Validate that each development task is fully ready for execution, address gaps, and confirm traceability prior to implementation start.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Engineering standards | `docs/development/coding-standards.md`, `docs/development/iteration-plan.md`, `docs/development/readiness-checklist.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, `docs/development/sbom-strategy.md` | Align task readiness with standards, pipeline, environment expectations. |
+| Backlog artefacts | `backlog/tasks/`, `backlog/stories/`, `backlog/features/`, `backlog/epics/` | Review task content, dependencies, DoR/DoD status. |
+| Design references | `docs/design/LLD/`, `docs/design/api-specs/`, `docs/design/threat-model.md`, `docs/design/data-architecture.md` | Ensure tasks link to required technical specifications. |
+| Traceability & governance | `docs/requirements/RTM.md`, `docs/change-log.md` | Confirm coverage, log blockers, report readiness status. |
 
-## Step-by-Step Instructions
-1. **Task Audit**
-   - Open assigned task files in `backlog/tasks/` and review each section (objective, prerequisites, dependencies, acceptance tests, DoD, traceability, effort, risks).
-   - Ensure alignment with corresponding stories/features and LLD components.
-2. **Update & Enrich Tasks**
-   - Where gaps exist, update task artefacts following ` templates/Task.md` (no placeholders). Include links to relevant design, RTM entries, and pipeline steps.
-   - Capture partial work notes or clarifications within task file under “Open Questions/To Clarify”.
-3. **Readiness Logging**
-   - Record status in `docs/development/task-readiness.md`, noting blockers, dependencies, and ETA for resolution.
-   - Escalate unresolved issues to Engineering Lead and DevOps Lead.
-4. **Traceability Confirmation**
-   - Verify RTM entries reference correct task IDs; update as needed to ensure forward traceability from requirements → design → backlog → implementation/testing.
-5. **Risk & Dependency Management**
-   - Document any technical or resource risks in change log or readiness log with mitigation plans.
-   - Highlight tasks requiring cross-team coordination (security, data, QA).
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Updated Tasks | `backlog/tasks/` | Markdown | Fill gaps using ` templates/Task.md` structure; maintain document control/approvals. |
+| Task Readiness Log | `docs/development/task-readiness.md` | Markdown | Capture readiness status, blockers, dependencies, ETA, owners. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Confirm forward traceability from requirements to tasks/test coverage. |
+| Change Log Update | `docs/change-log.md` | Markdown | Log blockers, risks, decisions stemming from readiness review. |
 
-## Deliverables
-- Updated task files in `backlog/tasks/`
-- `docs/development/task-readiness.md` with current status
-- Updated `docs/requirements/RTM.md`
-- Logged blockers/risks in change log
+## Procedure
+1. **Task Audit** – Review each task in scope; verify objective, prerequisites, dependencies, acceptance tests, DoD checklist, traceability fields, and approvals.
+2. **Enrich Task Content** – Update tasks to remove placeholders, add implementation notes, link to design artefacts, RTM IDs, pipeline steps, telemetry requirements, and evidence expectations as per ` templates/Task.md`.
+3. **Log Readiness Status** – Create or update `docs/development/task-readiness.md`; summarise each task’s status (Ready/Blocked/Needs Clarification), blockers, dependencies, owners, target resolution dates.
+4. **Traceability Confirmation** – Update RTM to ensure each requirement maps through backlog items to tasks and planned test/validation artefacts; flag gaps with actions.
+5. **Risk & Dependency Management** – Record technical/resource risks, cross-team dependencies, and mitigation plans in change log and/or readiness log.
+6. **Communication** – Notify Engineering Lead, DevOps Lead, QA of blockers or sequencing issues per communication plan.
+7. **Versioning & Approvals** – Ensure updated tasks and readiness log include document control, change log, approvals as required; collect sign-off or log pending approvals.
 
-## Traceability & Handover Requirements
-- Confirm every task references its originating requirement ID, design artefact, and planned test cases.
-- Provide QA with early insight into implementation sequencing for test planning.
-- Notify Release Manager of any deployment prerequisites discovered.
+## Traceability & Governance
+- Maintain clear linkage from requirement IDs → backlog items → tasks → CI/CD stages/tests.
+- Document blockers with owners and due dates in change log for transparency.
+- Provide QA with insight into implementation sequencing for test planning.
 
-## Completion Criteria
-- All tasks marked Ready with no TBD sections; blockers documented with owners and deadlines.
-- RTM reflects complete linkage through to tasks; readiness log indicates go/no-go for execution.
-- Stakeholders informed of risks and mitigation strategies.
+## Completion Checklist
+- [ ] Tasks updated with complete details, traceability, and DoD/DoR coverage.
+- [ ] Task readiness log reflects go/no-go status, blockers, and mitigation plans.
+- [ ] RTM updated to confirm end-to-end traceability through tasks.
+- [ ] Change log captures blockers, risks, actions, and communication updates.
 
 ## Parallelisation Notes
-- QA planning (Phase 5.1) can start in parallel once readiness log is established; keep change log aligned for transparency.
+QA planning (Phase 5.1) can proceed once readiness log is available; continue syncing change log and RTM as readiness evolves.

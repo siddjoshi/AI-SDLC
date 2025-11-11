@@ -1,45 +1,42 @@
 # Phase 7.1 – SRE / Operations Lead Prompt (Incident Response & Telemetry Validation)
 
-## Context
-- **Prerequisites:** Release artefacts prepared (deployment runbook, rollback plan, release notes), QA completed or in verification, CI/CD pipeline operational, monitoring requirements defined, RTM updated with release coverage, change log current.
-- **Reference Artefacts:** `docs/release/deployment-runbook.md`, `docs/release/RollbackPlan.md`, `docs/release/ReleaseNotes.md`, `docs/requirements/RTM.md`, `docs/testing/TestPlan.md`, `docs/design/HLD.md`, `docs/design/LLD/`, `docs/design/threat-model.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, `docs/development/sbom-strategy.md`.
-- **Downstream Dependencies:** Service Owner & Agile Coach (Phase 7.2), continuous improvement backlog.
+## Role Mission
+Ensure operational readiness by validating telemetry coverage, documenting incident response procedures, and confirming service-level commitments for post-release operations.
 
-## Objective
-Ensure operational readiness by validating telemetry coverage, documenting incident response procedures, and confirming service-level commitments post-release.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Release artefacts | `docs/release/deployment-runbook.md`, `docs/release/RollbackPlan.md`, `docs/release/ReleaseNotes.md`, `docs/release/support-readiness-checklist.md` | Understand deployment process, rollback, support readiness, known issues. |
+| Testing & requirements | `docs/testing/TestPlan.md`, `docs/requirements/RTM.md`, `docs/requirements/NFR.md` | Confirm validation scope, operational targets, traceability. |
+| Design & development | `docs/design/HLD.md`, `docs/design/LLD/`, `docs/design/threat-model.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, `docs/development/sbom-strategy.md` | Align telemetry, controls, and operational tooling with architecture and pipeline. |
+| Governance | `docs/inception/stakeholder-register.md`, `docs/inception/communication-plan.md`, `docs/change-log.md` | Determine escalation paths, notification cadence, outstanding risks. |
 
-## Step-by-Step Instructions
-1. **Telemetry Verification**
-   - Review monitoring/logging requirements from HLD/LLD, NFRs, and Test Plan.
-   - Validate actual telemetry configuration in staging/pre-prod environments; document gaps and remediation plans.
-2. **Incident Response Playbook**
-   - Create `docs/operations/incident-response.md` detailing alert thresholds, runbooks, escalation paths, on-call rotations, communication templates, and post-incident actions.
-   - Align with rollback procedures and stakeholder expectations.
-3. **Observability Status Report**
-   - Draft `docs/operations/observability-status.md` summarising KPI monitoring coverage, dashboards, alert health, and readiness to measure success metrics.
-   - Highlight missing metrics or tooling integrations requiring follow-up.
-4. **Traceability & RTM Update**
-   - Update RTM with operational readiness evidence, linking requirements/NFRs to incident response and telemetry artefacts.
-   - Document open risks or actions in change log with owners and deadlines.
-5. **Collaboration & Handover**
-   - Notify Change Manager, Release Manager, and Service Owner of operational readiness status.
-   - Identify improvements or backlog items for continuous enhancement.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Incident Response Playbook | `docs/operations/incident-response.md` | Markdown | Document alerting thresholds, workflows, escalation, communications, post-incident actions. |
+| Observability Status Report | `docs/operations/observability-status.md` | Markdown | Summarise telemetry coverage, dashboards, gaps, remediation plans. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Map operational readiness evidence to requirement/NFR IDs. |
+| Change Log Update | `docs/change-log.md` | Markdown | Record readiness status, gaps, risks, remediation actions. |
 
-## Deliverables
-- `docs/operations/incident-response.md`
-- `docs/operations/observability-status.md`
-- Updated `docs/requirements/RTM.md`
-- Change log entries for operational readiness and gaps
+## Procedure
+1. **Telemetry Verification** – Review HLD/LLD, NFRs, Test Plan, deployment artefacts to compile monitoring/logging requirements; validate actual telemetry in staging/pre-prod; document gaps and remediation actions.
+2. **Author Incident Response Playbook** – Create `docs/operations/incident-response.md`; outline alert thresholds, detection methods, runbooks, escalation paths, communication templates, on-call rotations, post-incident review process, alignment with rollback plan.
+3. **Draft Observability Status Report** – Produce `docs/operations/observability-status.md`; summarise dashboards, metrics, logs, traces, alert health, gaps, remediation timelines, ownership, evidence locations.
+4. **Traceability Updates** – Update RTM to link operational requirements (availability, reliability, security monitoring) with incident response and observability artefacts; flag deficiencies with owners.
+5. **Change Log & Communication** – Record readiness status, gaps, remediation plans, and stakeholder notifications in change log; coordinate with Release Manager, Change Manager, Service Owner.
+6. **Versioning & Approvals** – Populate document control, change log, approvals for each new artefact; secure sign-off from SRE Lead/Operations leadership.
 
-## Traceability & Handover Requirements
-- Ensure incident response workflows tie back to NFR targets (availability, reliability, security).
-- Provide Service Owner & Agile Coach with list of operational insights and improvement candidates for retrospectives.
-- Confirm telemetry evidence is stored and accessible for compliance audits.
+## Traceability & Governance
+- Tie incident response workflows and telemetry evidence to NFR targets (availability, reliability, security).
+- Provide Service Owner & Agile Coach with list of operational insights and improvement candidates.
+- Confirm telemetry evidence storage meets compliance/audit requirements.
 
-## Completion Criteria
-- Incident response playbook and observability report completed with no placeholders; gaps documented with remediation timelines.
-- RTM updated with operational evidence; change log reflects readiness status.
-- Stakeholders informed of operational posture and any outstanding risks.
+## Completion Checklist
+- [ ] Incident response playbook and observability report completed without placeholders; gaps documented with remediation plans.
+- [ ] RTM updated with operational readiness coverage; outstanding gaps assigned owners and dates.
+- [ ] Change log reflects operational posture, risks, actions, and communications.
+- [ ] Stakeholders informed of readiness status and follow-up steps.
 
 ## Parallelisation Notes
-- Phase 7.2 activities (retrospectives, RCA preparation) can commence once initial operational status is documented; maintain continuous updates as telemetry gaps are closed.
+Phase 7.2 activities can start once initial operational status is documented; update RTM and change log as telemetry gaps close.

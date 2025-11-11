@@ -1,5 +1,17 @@
 # Feature Specification: <Feature Name>
 
+## Document Control
+| Version | Date | Author | Reviewer | Notes |
+|---------|------|--------|----------|-------|
+| 0.1     |      |        |          | Draft |
+| 1.0     |      |        |          | Baseline |
+|         |      |        |          |       |
+
+## Approvals
+| Name | Role | Signature | Date |
+|------|------|-----------|------|
+|      |      |           |      |
+
 ## 1. Metadata
 | Field | Value |
 |-------|-------|
@@ -90,12 +102,17 @@
 |---------|-------------|--------|------------|---------------------------|-------|--------|
 | R-      |             |        |            |                           |       |        |
 
-## 14. Approval & Sign-off
+## 14. Change Log
+| Change ID | Date | Section | Summary of Update | Author | Reviewer |
+|-----------|------|---------|-------------------|--------|----------|
+|           |      |         |                   |        |          |
+
+## 15. Approval & Sign-off
 | Name | Role | Decision (Approve / Approve with Conditions / Reject) | Date | Notes |
 |------|------|------------------------------------------------------|------|-------|
 |      |      |                                                      |      |       |
 
-## 15. Validation Checklist
+## 16. Validation Checklist
 - [ ] Business problem, value, and success metrics are clearly defined and quantifiable.
 - [ ] Scope boundaries, assumptions, constraints, and dependencies are documented with owners.
 - [ ] Functional and non-functional requirements trace to BRD/PRD/SRS and have acceptance coverage.

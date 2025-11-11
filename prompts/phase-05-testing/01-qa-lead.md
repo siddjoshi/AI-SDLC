@@ -1,45 +1,44 @@
 # Phase 5.1 – QA/Test Lead Prompt (Master Test Plan)
 
-## Context
-- **Prerequisites:** Requirements (BRD, PRD, SRS, NFR), design artefacts (HLD, LLD, threat model, API specs, data architecture), backlog items, coding standards, CI/CD spec, environment matrix, RTM current, change log updated.
-- **Reference Artefacts:** `docs/requirements/RTM.md`, `docs/requirements/SRS.md`, `docs/requirements/NFR.md`, `docs/design/HLD.md`, `docs/design/LLD/`, `docs/design/threat-model.md`, `docs/design/api-specs/`, `docs/design/data-architecture.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, backlog stories/tasks.
-- **Template:** ` templates/TestPlan.md`.
-- **Downstream Dependencies:** QA specialists (Phase 5.2), Release (Phase 6), Operations (Phase 7).
+## Role Mission
+Establish a comprehensive Test Plan covering scope, strategy, environments, metrics, and governance to direct all QA activities.
 
-## Objective
-Create a comprehensive Test Plan that governs QA strategy, scope, schedules, environments, metrics, and risk management for the programme.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Requirements | `docs/requirements/BRD.md`, `docs/requirements/PRD.md`, `docs/requirements/SRS.md`, `docs/requirements/NFR.md` | Define functional/non-functional coverage obligations. |
+| Design artefacts | `docs/design/HLD.md`, `docs/design/LLD/`, `docs/design/threat-model.md`, `docs/design/api-specs/`, `docs/design/data-architecture.md` | Understand architecture, interfaces, threat surfaces, data flows. |
+| Development enablement | `docs/development/coding-standards.md`, `docs/development/iteration-plan.md`, `docs/development/cicd-spec.md`, `docs/development/environment-matrix.md`, `docs/development/sbom-strategy.md` | Align with pipeline stages, environments, quality gates. |
+| Traceability | `docs/requirements/RTM.md`, backlog stories/tasks | Validate coverage and determine required test assets. |
+| Governance | `docs/inception/stakeholder-register.md`, `docs/inception/communication-plan.md`, `docs/change-log.md` | Confirm approvals, reporting cadence, outstanding risks. |
+| Template | ` templates/TestPlan.md` | Structure for the Test Plan document. |
 
-## Step-by-Step Instructions
-1. **Requirement Review**
-   - Validate RTM coverage; identify high-risk requirements, NFRs, and compliance obligations.
-   - Capture any ambiguities or missing acceptance criteria and raise with requirements/design owners.
-2. **Populate Test Plan Template**
-   - Clone ` templates/TestPlan.md` into `docs/testing/TestPlan.md`.
-   - Complete all sections: objectives, scope, approach, test types, environment needs, data strategy overview, metrics, entry/exit criteria, roles & responsibilities, schedule, defect process, risks, assumptions, approvals.
-3. **Integration with CI/CD & Environments**
-   - Align test stages with pipeline design (unit, static, integration, performance, security).
-   - Define environment usage schedule referencing environment matrix; address data refresh and access controls.
-4. **Traceability Setup**
-   - Update RTM with planned test artefacts and coverage entries (e.g., test plan sections, suite IDs).
-   - Identify residual gaps and assign owners for additional test artefacts.
-5. **Stakeholder Alignment**
-   - Prepare test governance cadence aligned with communication plan.
-   - Update `docs/change-log.md` with test plan baseline, review schedule, and outstanding dependencies.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Test Plan | `docs/testing/TestPlan.md` | Markdown | Complete all sections of template; include approvals, change log, traceability references. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Add planned test coverage entries, suite IDs, validation status. |
+| Change Log Update | `docs/change-log.md` | Markdown | Log test plan baseline, risks, dependencies, review schedule. |
 
-## Deliverables
-- `docs/testing/TestPlan.md`
-- Updated `docs/requirements/RTM.md`
-- Change log updates (test planning decisions, risks)
+## Procedure
+1. **Requirement Review** – Validate RTM coverage; identify high-risk requirements, NFRs, compliance obligations; engage stakeholders to resolve ambiguities.
+2. **Populate Test Plan** – Clone ` templates/TestPlan.md` into `docs/testing/TestPlan.md`; fill objectives, scope, strategy, automation, defect management, environments, data strategy, roles, schedule, entry/exit criteria, metrics, risks, communication plan.
+3. **Align with CI/CD & Environments** – Ensure pipeline stages, quality gates, and environment availability are documented; specify environment usage schedule, data refresh cadence, access controls.
+4. **Traceability Setup** – Update RTM with planned test artefacts (Test Plan sections, suite IDs); capture gaps and assign owners with due dates.
+5. **Stakeholder Engagement** – Document governance cadence, review meetings, and reporting aligned with communication plan; identify required approvals.
+6. **Change Log Update** – Record Test Plan status, key decisions, risks, and follow-up actions in `docs/change-log.md`.
+7. **Versioning & Approvals** – Populate document control, change log, approval tables in Test Plan; ensure stakeholders and dates captured.
 
-## Traceability & Handover Requirements
-- Ensure every requirement/NFR has corresponding planned test coverage documented in RTM.
-- Brief QA specialists on ownership of detailed suites and data strategy tasks.
+## Traceability & Governance
+- Confirm every requirement/NFR has planned test coverage recorded in RTM.
+- Provide QA specialists with scope, environment, and metric expectations for subsequent prompt.
 - Notify Release Manager of entry/exit criteria and reporting commitments.
 
-## Completion Criteria
-- Test Plan complete with no placeholders, approved roles assigned, review scheduled.
-- RTM reflects test coverage mapping; outstanding gaps tracked with due dates.
-- Communication sent to QA specialists and stakeholders summarising plan highlights.
+## Completion Checklist
+- [ ] Test Plan completed without placeholders; approvals and version history updated.
+- [ ] RTM updated with planned coverage and gap remediation owners.
+- [ ] Change log captures Test Plan baseline, risks, dependencies.
+- [ ] Communication plan alignment documented for test governance cadence.
 
 ## Parallelisation Notes
-- QA specialists (Phase 5.2) can begin detailed suite creation once initial Test Plan sections on scope, environments, and metrics are drafted; maintain RTM synchronisation.
+QA specialists (Phase 5.2) can begin detailed suite creation once scope, environments, and metrics sections are drafted; maintain RTM synchronisation for changes.

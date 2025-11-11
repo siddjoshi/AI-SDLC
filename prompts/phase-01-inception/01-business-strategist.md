@@ -1,51 +1,41 @@
 # Phase 1.1 – Business Strategist Prompt (Business Case, Vision & Goals)
 
-## Context
-- **Phase Sequence:** First activity in the SDLC pipeline. No prior artefacts beyond raw opportunity intake.
-- **Upstream Inputs:** Idea brief, market opportunity notes, executive mandate (if available).
-- **Downstream Dependencies:** Outputs feed ` templates/BRD.md`, ` templates/PRD.md`, and stakeholder alignment activities.
-- **Workspace Templates & References:**
-  - ` templates/BRD.md` (KPI table, scope framing)
-  - Repository `README.md` (mandatory inception artefacts)
+## Role Mission
+Ground the initiative with a quantified business case and clearly articulated vision so later phases inherit unambiguous KPIs, dependencies, and approval expectations.
 
-## Objective
-Produce a Business Case and Vision & Goals package that quantifies value, defines success metrics, and shapes all subsequent requirements work without needing any further prompts.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Repository guidance | `README.md` | Confirms mandatory inception artefacts, compliance expectations, and downstream dependencies. |
+| Opportunity intake | Provided business idea / executive mandate | Establishes initial problem statement, market context, and constraints. |
+| Templates | ` templates/BRD.md`, ` templates/PRD.md` | Identify KPI tables and sections that must be pre-populated or referenced. |
 
-## Step-by-Step Instructions
-1. **Review Repository Guidance**
-   - Open `README.md` to confirm inception deliverables, compliance needs, and cross-phase dependencies.
-   - Note mandatory artefacts (Business Case, Vision & Goals, Stakeholder Register) and the KPIs referenced downstream.
-2. **Analyse Opportunity & Market**
-   - Summarise the problem/opportunity, target segments, personas, and market landscape.
-   - Record regulatory or compliance triggers that must appear in later phases.
-3. **Draft the Business Case**
-   - Create `docs/inception/business-case.md` if it does not exist.
-   - Populate executive summary, strategic alignment, qualitative benefits, quantitative ROI, cost estimates, risks, and assumptions.
-   - Include a KPI table with baseline, target, measurement cadence, and data sources; ensure KPI IDs can map into the BRD.
-4. **Author the Vision & Goals Document**
-   - Create `docs/inception/vision-and-goals.md`.
-   - State product vision, guiding principles, business objectives, and explicit success criteria tied to the Business Case KPIs.
-   - Highlight key personas and journeys that will be elaborated in the PRD.
-5. **Document Dependencies & Open Questions**
-   - Append a section listing dependencies for stakeholder alignment, compliance reviews, technology assessments, and funding gates.
-   - Flag unanswered questions with owners and due dates so future agents can resolve them.
-6. **Publish Change Log & Approvals**
-   - Add version metadata (0.1 Draft → 1.0 Baseline) and capture approval stakeholders aligned with the forthcoming Stakeholder Register.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Business Case | `docs/inception/business-case.md` | Markdown | Include embedded change log, approvals table, KPI catalogue, and ROI analysis. |
+| Vision & Goals | `docs/inception/vision-and-goals.md` | Markdown | Tie goals to KPI IDs, personas, and success criteria referenced later in PRD/SRS. |
+| Change Log Entry | `docs/change-log.md` | Markdown | Record baseline decisions, outstanding questions, owners, due dates. |
 
-## Deliverables
-- `docs/inception/business-case.md`
-- `docs/inception/vision-and-goals.md`
-- Embedded change log and approval tables within each document.
+## Procedure
+1. **Confirm Mandatory Expectations** – Review `README.md` to list inception deliverables, compliance guardrails, and approval workflow captured in RACI.
+2. **Analyse Opportunity & Market** – Summarise problem, target segments, personas, market sizing, competitors, and regulatory triggers; document assumptions for validation.
+3. **Draft Business Case** – Create `docs/inception/business-case.md`; complete executive summary, strategic alignment, qualitative/quantitative benefits, ROI model, cost estimates, risks, assumptions, and KPI table (baseline, target, cadence, data source, KPI ID).
+4. **Author Vision & Goals** – Create `docs/inception/vision-and-goals.md`; articulate vision statement, guiding principles, measurable goals mapped to Business Case KPIs, personas, journeys, and success criteria that will flow into PRD.
+5. **Document Dependencies & Questions** – Append dependency list (stakeholder alignment, compliance reviews, technology assessments, funding gates) and log open questions with owners and due dates in both documents and the change log.
+6. **Versioning & Approvals** – Populate document control, change log, and approvals tables; identify reviewers/approvers aligned to stakeholder register requirements.
+7. **Change Log Update** – Add summary of Business Case/Vision baseline, KPIs, pending risks, and unresolved decisions to `docs/change-log.md` with owner + due date.
 
-## Traceability & Handover Requirements
-- Cross-reference KPI IDs and success metrics that must feed into ` templates/BRD.md` and ` templates/PRD.md`.
-- Provide a dependency list for the Portfolio Manager prompt (Stakeholder Register, RACI, Comms Plan).
-- Update or create `docs/change-log.md` with a summary of decisions and approvals.
+## Traceability & Governance
+- Assign KPI IDs that will map directly into ` templates/BRD.md` and ` templates/PRD.md`.
+- Cross-reference dependencies for stakeholder register, RACI, and communication plan prompts.
+- Capture assumptions requiring validation and ensure they are logged with accountable owners.
 
-## Completion Criteria
-- Business Case and Vision & Goals documents are complete, versioned, and stored under `docs/inception/` with no placeholder text.
-- KPIs, risks, and assumptions are explicitly tied to future artefacts (mention template names and sections).
-- Dependencies and outstanding questions are enumerated with owners and due dates.
+## Completion Checklist
+- [ ] Business Case and Vision & Goals stored under `docs/inception/` with no placeholder text.
+- [ ] KPIs, risks, and assumptions explicitly trace to future requirements templates.
+- [ ] Document control, approvals, and embedded change logs populated.
+- [ ] `docs/change-log.md` updated with decisions, dependencies, and open questions.
 
 ## Parallelisation Notes
-- This prompt must complete before any other SDLC prompt begins. Subsequent prompts reference its artefacts; do not proceed to Phase 1.2 until Business Case and Vision & Goals are baselined.
+This prompt must finish before any other SDLC prompt runs. Subsequent prompts rely on the baselined Business Case and Vision & Goals artefacts.

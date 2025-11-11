@@ -1,52 +1,45 @@
 # Phase 3.2 – Security, Data & Integration Architect Prompt (Specialised Design Artefacts)
 
-## Context
-- **Prerequisites:** HLD drafted (Phase 3.1) with RTM updates, LLD component list available, change log current.
-- **Reference Artefacts:** `docs/design/HLD.md`, `docs/design/LLD/`, `docs/requirements/SRS.md`, `docs/requirements/NFR.md`, `docs/requirements/RTM.md`, backlog priorities.
-- **Target Documents:** Threat model, API/ICD specifications, detailed data architecture package.
-- **Downstream Dependencies:** Development (Phase 4), QA (Phase 5), Release (Phase 6).
+## Role Mission
+Deliver specialised security, integration, and data design artefacts that mitigate risks, clarify interfaces, and ensure data integrity for development, testing, and operations teams.
 
-## Objective
-Deliver specialised design artefacts—threat modeling, integration specifications, and data architecture—ensuring mitigation of security risks, clarity of interfaces, and integrity of data flows.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| High-Level Design | `docs/design/HLD.md` | Understand architecture context, components, integration points, design decisions. |
+| Component LLDs | `docs/design/LLD/` | Capture detailed behaviours, interfaces, data contracts requiring specialised attention. |
+| Requirements | `docs/requirements/SRS.md`, `docs/requirements/NFR.md`, `docs/requirements/RTM.md` | Align security, data, and integration requirements and traceability. |
+| Threat & Compliance context | `docs/inception/stakeholder-register.md`, `docs/change-log.md` | Identify stakeholders, risk owners, outstanding issues. |
+| Backlog priorities | `backlog/` directories | Tie technical deliverables to features/stories/tasks. |
 
-## Step-by-Step Instructions
-1. **Synchronise with Solution Architect**
-   - Review HLD sections related to security, integration, data, deployment, and operational requirements.
-   - Confirm assumptions, unresolved items, and priority areas from change log.
-2. **Threat Model (Security Architect)**
-   - Document assets, trust boundaries, attack surfaces using STRIDE or equivalent.
-   - Map threats to mitigations referencing HLD/LLD controls and NFR security targets.
-   - Store output in `docs/design/threat-model.md` with diagrams if applicable.
-   - Update RTM with threat IDs and mitigation references.
-3. **API & Integration Specifications (Integration Architect)**
-   - Identify interfaces from HLD Section 7 and backlog stories.
-   - For each interface, create specification using internal standards (include endpoints, payloads, auth, error handling, SLAs). Store under `docs/design/api-specs/<service>.md`.
-   - Link to corresponding stories/features and note test expectations for QA.
-4. **Data Architecture Package (Data Architect)**
-   - Expand HLD data design into detailed ERDs/schema definitions, data flow diagrams, and governance notes.
-   - Capture data classification, privacy, retention, lineage, and integration with existing systems.
-   - Save documentation in `docs/design/data-architecture.md` plus supporting diagrams under `docs/diagrams/` as needed.
-5. **Traceability & Collaboration**
-   - Update `docs/requirements/RTM.md` to include references for each specialised artefact against relevant requirements and NFRs.
-   - Communicate dependencies to Engineering, QA, and DevOps (e.g., security controls, data pipelines, integration test needs).
-   - Log decisions, risks, and follow-up actions in `docs/change-log.md` or dedicated design decision log.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Threat Model | `docs/design/threat-model.md` | Markdown | Document assets, trust boundaries, attack surfaces, mitigations, evidence links. |
+| API/Integration Specs | `docs/design/api-specs/<service>.md` | Markdown | One file per interface detailing contracts, auth, SLAs, error handling. |
+| Data Architecture Package | `docs/design/data-architecture.md` | Markdown | Expand data models, governance, flows; link to diagrams in `docs/diagrams/`. |
+| RTM Update | `docs/requirements/RTM.md` | Markdown | Map security/data/integration requirements to artefacts and planned validation. |
+| Change Log Update | `docs/change-log.md` | Markdown | Record new controls, dependencies, open risks. |
 
-## Deliverables
-- `docs/design/threat-model.md`
-- `docs/design/api-specs/<service>.md`
-- `docs/design/data-architecture.md` (plus diagrams)
-- Updated `docs/requirements/RTM.md`
-- Change log updates / design decision entries
+## Procedure
+1. **Synchronise with Solution Architect** – Review HLD sections covering security, integration, data, deployment, and operational requirements; confirm unresolved items and priorities from change log.
+2. **Develop Threat Model** – Document assets, trust boundaries, attack surfaces using STRIDE (or equivalent); map threats to mitigations referencing HLD/LLD controls, backlog tasks, NFR security targets; store in `docs/design/threat-model.md` with diagram references.
+3. **Produce API & Integration Specifications** – Identify interfaces from HLD, LLD, backlog; create `docs/design/api-specs/<service>.md` per interface including endpoints, payloads, auth, rate limits, SLAs, error handling, observability expectations, test hooks. Link to relevant stories/tasks.
+4. **Expand Data Architecture** – Elaborate conceptual/logical/physical models, data classifications, retention, lineage, governance, privacy controls; document in `docs/design/data-architecture.md` and reference diagrams stored in `docs/diagrams/` (C4/UML/ERD as appropriate).
+5. **Traceability Updates** – Update RTM to connect security, integration, and data requirements (BRD/PRD/SRS/NFR) to specialised artefacts, backlog items, and planned tests.
+6. **Collaboration & Notifications** – Share required actions with Engineering, QA, DevOps (e.g., security controls, data pipelines, integration test needs); record actions, owners, and due dates.
+7. **Change Log & Approvals** – Update `docs/change-log.md` with decisions, residual risks, mitigation plans, and review schedule; ensure document control and approval tables are populated for each artefact.
 
-## Traceability & Handover Requirements
-- Each threat, API, and data element must cite originating requirement IDs and note validation strategy.
-- Provide QA with test considerations (security/performance/data quality) for Phase 5 planning.
-- Highlight infrastructure or monitoring requirements for DevOps and Operations teams.
+## Traceability & Governance
+- Map each threat, API, and data element to originating requirement IDs and validation strategy in RTM.
+- Reference NFR targets and backlog items where work will be implemented.
+- Highlight dependencies impacting CI/CD, testing, release, and operations planning.
 
-## Completion Criteria
-- Specialised artefacts complete, reviewed with Solution Architect, and no placeholders remain.
-- RTM reflects security, integration, and data design coverage; outstanding gaps have owners and deadlines.
-- Stakeholders notified of new controls, dependencies, and verification obligations.
+## Completion Checklist
+- [ ] Threat model, API specs, and data architecture artefacts completed with no placeholders.
+- [ ] RTM updated with security, integration, and data coverage; gaps have owners and dates.
+- [ ] Change log captures new controls, risks, dependencies, and approvals.
+- [ ] Stakeholders notified about obligations for implementation and testing.
 
 ## Parallelisation Notes
-- Engineering Lead (Phase 4.1) and DevOps Lead (Phase 4.2) can begin once initial specs are published; keep change log and RTM synchronised for subsequent revisions.
+Engineering Lead (Phase 4.1) and DevOps Lead (Phase 4.2) can start when initial specs are published; maintain RTM/change log synchronisation for revisions.

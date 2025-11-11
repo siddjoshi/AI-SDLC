@@ -1,50 +1,44 @@
 # Phase 2.1 – Product Manager Prompt (Business & Product Requirements)
 
-## Context
-- **Phase Sequence:** Begins Phase 2 after completion of Phase 1 prompts.
-- **Upstream Inputs:** `docs/inception/business-case.md`, `docs/inception/vision-and-goals.md`, stakeholder governance pack (`stakeholder-register`, `raci-matrix`, `communication-plan`).
-- **Downstream Dependencies:** Outputs drive SRS, NFR catalogue, RTM seeding, backlog decomposition, and architecture design.
-- **Templates:** ` templates/BRD.md`, ` templates/PRD.md`.
+## Role Mission
+Translate business intent into baseline BRD and PRD artefacts that provide complete scope, prioritised features, and measurable outcomes for downstream teams.
 
-## Objective
-Produce baseline BRD and PRD documents that translate business intent into product requirements, ready for immediate consumption by analysts, architects, and delivery teams.
+## Inputs & References
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Business Case | `docs/inception/business-case.md` | Capture objectives, KPIs, risks, financials. |
+| Vision & Goals | `docs/inception/vision-and-goals.md` | Align product vision, personas, guiding principles. |
+| Stakeholder Governance | `docs/inception/stakeholder-register.md`, `docs/inception/raci-matrix.md`, `docs/inception/communication-plan.md` | Determine approvals, decision rights, communication cadence. |
+| Repository guidance | `README.md`, `docs/change-log.md` | Confirm mandatory artefacts, outstanding questions. |
+| Templates | ` templates/BRD.md`, ` templates/PRD.md` | Source structure, approval tables, KPI mapping. |
 
-## Step-by-Step Instructions
-1. **Foundation Review**
-   - Confirm mandatory requirements in `README.md` and capture stakeholder approvals from RACI matrix.
-   - Extract KPIs, risks, and constraints from Business Case and Vision & Goals.
-2. **Populate BRD**
-   - Clone ` templates/BRD.md` into `docs/requirements/BRD.md`.
-   - Fill every section with project-specific content (executive summary, objectives, scope, processes, benefits, cost-benefit analysis, risks, timeline, approvals).
-   - Map each business objective to measurable KPIs and stakeholder expectations.
-3. **Draft PRD**
-   - Clone ` templates/PRD.md` into `docs/requirements/PRD.md`.
-   - Document personas, journeys, feature catalogue, user stories (high-level), acceptance criteria, non-functional considerations, analytics, release strategy, risk register.
-   - Ensure features reference BRD objectives and include IDs for traceability.
-4. **Traceability Preparation**
-   - Assign requirement IDs (e.g., BRD-OBJ-01, PRD-FEAT-01) and log them in a traceability section to seed `docs/requirements/RTM.md`.
-   - Identify which requirements will become Epics, Features, and Stories.
-5. **Stakeholder & Approval Integration**
-   - Populate approval tables using stakeholder IDs from the register.
-   - Document review cadence based on the communication plan.
-6. **Risk & Decision Log**
-   - Record decisions, open questions, and risks with owners.
-   - Update `docs/change-log.md` with major requirement baselines and pending items.
+## Expected Outputs
+| Artefact | Destination | Format | Notes |
+|----------|-------------|--------|-------|
+| Business Requirements Document | `docs/requirements/BRD.md` | Markdown | Populate every section; include version history, approvals, embedded change log. |
+| Product Requirements Document | `docs/requirements/PRD.md` | Markdown | Complete personas, journeys, features, acceptance criteria, analytics, risks. |
+| Change Log Entry | `docs/change-log.md` | Markdown | Record requirement baselines, pending actions, risks. |
 
-## Deliverables
-- `docs/requirements/BRD.md`
-- `docs/requirements/PRD.md`
-- Updates to `docs/change-log.md`
+## Procedure
+1. **Foundation Review** – Use governance artefacts to list required approvals, cadence, and decision rights; capture unresolved items in change log.
+2. **Populate BRD** – Clone ` templates/BRD.md` into `docs/requirements/BRD.md`; fill executive summary, objectives, scope, processes, benefits, cost-benefit analysis, risks, roadmap, stakeholder expectations, approvals. Map each objective to KPIs (IDs) and stakeholder expectations.
+3. **Draft PRD** – Clone ` templates/PRD.md` into `docs/requirements/PRD.md`; document personas, journeys, feature catalogue, high-level stories, acceptance criteria, analytics, release strategy, risk register, compliance considerations.
+4. **Assign Requirement IDs** – Define consistent ID scheme (e.g., BRD-OBJ-01, PRD-FEAT-01) and embed references within both documents for traceability.
+5. **Traceability Preparation** – Create tables summarising how requirements flow into upcoming SRS/RTM/backlog artefacts; flag regulatory/compliance items requiring dedicated NFR coverage.
+6. **Stakeholder Integration** – Populate approval tables using stakeholder IDs; state review cadence per communication plan.
+7. **Risk & Decision Logging** – Document open questions, dependencies, risks with owners and due dates; propagate summaries into `docs/change-log.md`.
+8. **Versioning** – Update document control tables, embedded change logs, and approvals to reflect draft/baseline status.
 
-## Traceability & Handover Requirements
-- Provide a mapping table of BRD/PRD requirement IDs to future SRS sections and backlog artefacts.
-- Highlight regulatory/compliance drivers that architects and QA must address.
-- Notify Systems Analyst persona (Phase 2.2) of any unresolved assumptions requiring validation.
+## Traceability & Governance
+- Ensure every requirement references KPI IDs and stakeholder obligations.
+- Highlight items requiring Systems Analyst validation or Product Operations backlog decomposition.
+- Note compliance and NFR drivers for later phases.
 
-## Completion Criteria
-- BRD and PRD are fully populated with no placeholder text and versioned (0.1 Draft → 1.0 Baseline).
-- All objectives, features, and acceptance criteria have IDs and traceability notes.
-- Stakeholder approvals captured or pending actions recorded with due dates.
+## Completion Checklist
+- [ ] BRD and PRD stored under `docs/requirements/` with no placeholders.
+- [ ] Requirement IDs defined and cross-referenced across documents.
+- [ ] Approval tables populated or pending approvals logged with dates.
+- [ ] Change log updated with baseline decisions, open risks, and owners.
 
 ## Parallelisation Notes
-- Once BRD is baselined, the Systems Analyst and Product Operations prompts can begin in parallel. Maintain BRD/PRD changelog entries for coordination.
+Once the BRD baseline is set, Systems Analyst (Phase 2.2) and Product Operations (Phase 2.3) can proceed in parallel; maintain change log updates for any revisions.
