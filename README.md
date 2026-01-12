@@ -8,6 +8,8 @@ The AI-SDLC repository hosts an enterprise-grade documentation system for managi
 
 Use this README as the north star for orchestrating artefact creation, review, and lifecycle management.
 
+📊 **[View the Architecture Flow Diagram](docs/architecture-flow.md)** - Visual guide to the complete AI-SDLC workflow with Mermaid diagrams
+
 ---
 
 ## Quick start for contributors
@@ -127,6 +129,7 @@ Before concluding any task:
 
 ## Additional resources
 
+- **Architecture Flow Diagram:** `docs/architecture-flow.md` (comprehensive Mermaid-based visualization of the AI-SDLC workflow)
 - **Operating handbook:** `AGENTS.md`
 - **Prompt catalogue:** `prompts/SDLC_AI_Agent_Prompts.md`
 - **Historical templates:** `templates-old/` (for reference only; do not reuse without review).
