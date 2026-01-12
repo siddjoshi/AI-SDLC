@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document provides a comprehensive Mermaid-based visualization of the AI-SDLC workflow, showing the flow from inception through operations, including agent personas, artifacts, and dependencies.
+This document provides a comprehensive Mermaid-based visualization of the AI-SDLC workflow, showing the flow from inception through operations, including agent personas, artefacts, and dependencies.
 
 ## Architecture Overview
 
@@ -525,4 +525,4 @@ AI agents automate documentation creation:
 - [AGENTS.md](../AGENTS.md) - Agent operating handbook
 - [Phase Gates Template](../ templates/phase-gates.md) - Detailed gate criteria
 - [RTM Template](../ templates/RTM.md) - Traceability matrix structure
-- [Prompts Catalog](../prompts/SDLC_AI_Agent.md) - All agent prompts
+- [Prompts Catalogue](../prompts/SDLC_AI_Agent.md) - All agent prompts
